@@ -1,0 +1,608 @@
+[
+    {
+      "ten": "Thái Hồng Quân",
+      "phongId": 1,
+      "chucVuId": 1,
+      "soThuTu": 1
+    },
+    {
+      "ten": "Nguyễn Hùng Việt",
+      "phongId": 3,
+      "chucVuId": 5,
+      "soThuTu": 2
+    },
+    {
+      "ten": "Nguyễn Thế Duy",
+      "phongId": 3,
+      "chucVuId": 6,
+      "soThuTu": 3
+    },
+    {
+      "ten": "Phan Đình Thạnh",
+      "phongId": 3,
+      "chucVuId": 6,
+      "soThuTu": 4
+    },
+    {
+      "ten": "Phạm Văn Luận",
+      "phongId": 4,
+      "chucVuId": 9,
+      "soThuTu": 5
+    },
+    {
+      "ten": "Phạm Sĩ Huân",
+      "phongId": 4,
+      "chucVuId": 12,
+      "soThuTu": 6
+    },
+    {
+      "ten": "Phan Thị Anh Đào",
+      "phongId": 4,
+      "chucVuId": 11,
+      "soThuTu": 7
+    },
+    {
+      "ten": "Đinh Quang Nhật",
+      "phongId": 4,
+      "chucVuId": 13,
+      "soThuTu": 8
+    },
+    {
+      "ten": "Nguyễn Ngọc Thành",
+      "phongId": 4,
+      "chucVuId": 14,
+      "soThuTu": 9
+    },
+    {
+      "ten": "Trần Thanh Nhân",
+      "phongId": 4,
+      "chucVuId": 14,
+      "soThuTu": 10
+    },
+    {
+      "ten": "Nguyễn Văn Trúc",
+      "phongId": 4,
+      "chucVuId": 14,
+      "soThuTu": 11
+    },
+    {
+      "ten": "Nguyễn Ngọc Anh",
+      "phongId": 4,
+      "chucVuId": 14,
+      "soThuTu": 12
+    },
+    {
+      "ten": "Võ Anh Thùy An",
+      "phongId": 4,
+      "chucVuId": 13,
+      "soThuTu": 13
+    },
+    {
+      "ten": "Trần Ngọc Thùy Vy",
+      "phongId": 4,
+      "chucVuId": 13,
+      "soThuTu": 14
+    },
+    {
+      "ten": "Phan Thanh Vinh",
+      "phongId": 4,
+      "chucVuId": 14,
+      "soThuTu": 15
+    },
+    {
+      "ten": "Phan Nguyên Tuấn",
+      "phongId": 4,
+      "chucVuId": 14,
+      "soThuTu": 16
+    },
+    {
+      "ten": "Phạm Thái Hùng",
+      "phongId": 5,
+      "chucVuId": 7,
+      "soThuTu": 17
+    },
+    {
+      "ten": "Trương Ngọc Hùng",
+      "phongId": 5,
+      "chucVuId": 13,
+      "soThuTu": 18
+    },
+    {
+      "ten": "Võ Thị Minh Thu",
+      "phongId": 5,
+      "chucVuId": 13,
+      "soThuTu": 19
+    },
+    {
+      "ten": "Nguyễn Võ Hiền Trang",
+      "phongId": 5,
+      "chucVuId": 13,
+      "soThuTu": 20
+    },
+    {
+      "ten": "Hồ Thủy Tiên",
+      "phongId": 5,
+      "chucVuId": 13,
+      "soThuTu": 21
+    },
+    {
+      "ten": "Phan Đình Long",
+      "phongId": 6,
+      "chucVuId": 9,
+      "soThuTu": 22
+    },
+    {
+      "ten": "Huỳnh Văn Sanh",
+      "phongId": 6,
+      "chucVuId": 11,
+      "soThuTu": 23
+    },
+    {
+      "ten": "Phan Vũ Quang Nhật",
+      "phongId": 6,
+      "chucVuId": 13,
+      "soThuTu": 24
+    },
+    {
+      "ten": "Hứa Huy Hiệu",
+      "phongId": 6,
+      "chucVuId": 13,
+      "soThuTu": 25
+    },
+    {
+      "ten": "Hồ Ngọc Ba",
+      "phongId": 6,
+      "chucVuId": 13,
+      "soThuTu": 26
+    },
+    {
+      "ten": "Nguyễn Đăng Hùng",
+      "phongId": 7,
+      "chucVuId": 9,
+      "soThuTu": 27
+    },
+    {
+      "ten": "Đinh Thế Tú",
+      "phongId": 7,
+      "chucVuId": 11,
+      "soThuTu": 28
+    },
+    {
+      "ten": "Trần Thanh Phú",
+      "phongId": 7,
+      "chucVuId": 13,
+      "soThuTu": 29
+    },
+    {
+      "ten": "Nguyễn Văn Tiến",
+      "phongId": 7,
+      "chucVuId": 13,
+      "soThuTu": 30
+    },
+    {
+      "ten": "Trần Văn Kỳ",
+      "phongId": 7,
+      "chucVuId": 13,
+      "soThuTu": 31
+    },
+    {
+      "ten": "Trần Hoài Bảo",
+      "phongId": 7,
+      "chucVuId": 13,
+      "soThuTu": 32
+    },
+    {
+      "ten": "Huỳnh Bá Anh Nhật",
+      "phongId": 7,
+      "chucVuId": 13,
+      "soThuTu": 33
+    },
+    {
+      "ten": "Nguyễn Hữu Bảo Khánh",
+      "phongId": 7,
+      "chucVuId": 13,
+      "soThuTu": 34
+    },
+    {
+      "ten": "Nguyễn Cường",
+      "phongId": 7,
+      "chucVuId": 13,
+      "soThuTu": 35
+    },
+    {
+      "ten": "Trần Ngọc Hoành",
+      "phongId": 8,
+      "chucVuId": 8,
+      "soThuTu": 36
+    },
+    {
+      "ten": "Trần Thanh Hằng",
+      "phongId": 8,
+      "chucVuId": 10,
+      "soThuTu": 37
+    },
+    {
+      "ten": "Lương Quang Phụng",
+      "phongId": 8,
+      "chucVuId": 10,
+      "soThuTu": 38
+    },
+    {
+      "ten": "Trần Văn Tân",
+      "phongId": 8,
+      "chucVuId": 13,
+      "soThuTu": 39
+    },
+    {
+      "ten": "Hứa Minh Hoàng",
+      "phongId": 8,
+      "chucVuId": 13,
+      "soThuTu": 40
+    },
+    {
+      "ten": "Hồ Sĩ Bản",
+      "phongId": 8,
+      "chucVuId": 13,
+      "soThuTu": 41
+    },
+    {
+      "ten": "Nguyễn Văn Thế",
+      "phongId": 8,
+      "chucVuId": 13,
+      "soThuTu": 42
+    },
+    {
+      "ten": "Huỳnh Bá Vinh",
+      "phongId": 8,
+      "chucVuId": 13,
+      "soThuTu": 43
+    },
+    {
+      "ten": "Vũ Đức Tịnh",
+      "phongId": 8,
+      "chucVuId": 13,
+      "soThuTu": 44
+    },
+    {
+      "ten": "Huỳnh Tấn Minh Vũ",
+      "phongId": 8,
+      "chucVuId": 13,
+      "soThuTu": 45
+    },
+    {
+      "ten": "Phan Minh Thạch",
+      "phongId": 9,
+      "chucVuId": 8,
+      "soThuTu": 46
+    },
+    {
+      "ten": "Võ Cao Trí",
+      "phongId": 9,
+      "chucVuId": 10,
+      "soThuTu": 47
+    },
+    {
+      "ten": "Phan Gia Khải",
+      "phongId": 9,
+      "chucVuId": 18,
+      "soThuTu": 48
+    },
+    {
+      "ten": "Mai Văn Hiền",
+      "phongId": 9,
+      "chucVuId": 17,
+      "soThuTu": 49
+    },
+    {
+      "ten": "Võ Văn Bốn",
+      "phongId": 9,
+      "chucVuId": 18,
+      "soThuTu": 50
+    },
+    {
+      "ten": "Phan Quang Hòa",
+      "phongId": 9,
+      "chucVuId": 17,
+      "soThuTu": 51
+    },
+    {
+      "ten": "Nguyễn Văn Thắng",
+      "phongId": 9,
+      "chucVuId": 17,
+      "soThuTu": 52
+    },
+    {
+      "ten": "Mai Đức Bình",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 53
+    },
+    {
+      "ten": "Hà Công Phú",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 54
+    },
+    {
+      "ten": "Huỳnh Xuân Toàn",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 55
+    },
+    {
+      "ten": "Cao Thanh Tài",
+      "phongId": 9,
+      "chucVuId": 17,
+      "soThuTu": 56
+    },
+    {
+      "ten": "Thái Thanh Hùng",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 57
+    },
+    {
+      "ten": "Lưu Văn Duy",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 58
+    },
+    {
+      "ten": "Lê Văn Thuận",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 59
+    },
+    {
+      "ten": "Võ Tuyến Sinh",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 60
+    },
+    {
+      "ten": "Nguyễn Tấn Hiền",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 61
+    },
+    {
+      "ten": "Ngô Sĩ Văn",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 62
+    },
+    {
+      "ten": "Trần Hồng Diệp",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 63
+    },
+    {
+      "ten": "Nguyễn Sinh",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 64
+    },
+    {
+      "ten": "Lê Đức Dưỡng",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 65
+    },
+    {
+      "ten": "Nguyễn Văn Khôi",
+      "phongId": 9,
+      "chucVuId": 18,
+      "soThuTu": 66
+    },
+    {
+      "ten": "Trần Kim Phúc",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 67
+    },
+    {
+      "ten": "Lưu Văn Tuấn",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 68
+    },
+    {
+      "ten": "Thái Văn Mai",
+      "phongId": 9,
+      "chucVuId": 14,
+      "soThuTu": 69
+    },
+    {
+      "ten": "Nguyễn Tuấn Đạt",
+      "phongId": 10,
+      "chucVuId": 8,
+      "soThuTu": 70
+    },
+    {
+      "ten": "Trần Văn Thiện",
+      "phongId": 10,
+      "chucVuId": 18,
+      "soThuTu": 71
+    },
+    {
+      "ten": "Nguyễn Văn Lai",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 72
+    },
+    {
+      "ten": "Trần Văn Cường",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 73
+    },
+    {
+      "ten": "Hoàng Tiến Dũng",
+      "phongId": 10,
+      "chucVuId": 18,
+      "soThuTu": 74
+    },
+    {
+      "ten": "Phan Thế Hoàng",
+      "phongId": 10,
+      "chucVuId": 17,
+      "soThuTu": 75
+    },
+    {
+      "ten": "Lò Minh Quách",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 76
+    },
+    {
+      "ten": "Châu Đình Duy",
+      "phongId": 10,
+      "chucVuId": 17,
+      "soThuTu": 77
+    },
+    {
+      "ten": "Lê Đình Mạo",
+      "phongId": 10,
+      "chucVuId": 17,
+      "soThuTu": 78
+    },
+    {
+      "ten": "Ksor Y Tỷ",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 79
+    },
+    {
+      "ten": "Lê Văn Tri",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 80
+    },
+    {
+      "ten": "Trần Thanh Tịnh",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 81
+    },
+    {
+      "ten": "Trần Quang Văn",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 82
+    },
+    {
+      "ten": "Nguyễn Đình Đức",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 83
+    },
+    {
+      "ten": "Nguyễn Ngọc Tây",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 84
+    },
+    {
+      "ten": "Nguyễn Quốc Dương",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 85
+    },
+    {
+      "ten": "Lê Văn Tuấn",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 86
+    },
+    {
+      "ten": "Lê Văn Vui",
+      "phongId": 10,
+      "chucVuId": 18,
+      "soThuTu": 87
+    },
+    {
+      "ten": "Vũ Văn Đề",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 88
+    },
+    {
+      "ten": "Phạm Lương Hiển Chí",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 89
+    },
+    {
+      "ten": "Cao Thế Hà",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 90
+    },
+    {
+      "ten": "Nguyễn Bá Cảnh",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 91
+    },
+    {
+      "ten": "Trần Khánh Thuật",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 92
+    },
+    {
+      "ten": "Bùi Xuân Nam",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 93
+    },
+    {
+      "ten": "Nguyễn Thanh Trà",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 94
+    },
+    {
+      "ten": "Trương Phạm Tuân",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 95
+    },
+    {
+      "ten": "Nguyễn Tấn Thoại",
+      "phongId": 10,
+      "chucVuId": 13,
+      "soThuTu": 96
+    },
+    {
+      "ten": "Đào Công Hiên",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 97
+    },
+    {
+      "ten": "Đoàn Anh Minh",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 98
+    },
+    {
+      "ten": "Dương Vương Vũ",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 99
+    },
+    {
+      "ten": "Quảng Đình Rạng",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 100
+    },
+    {
+      "ten": "Hà Thủy Sơn",
+      "phongId": 10,
+      "chucVuId": 14,
+      "soThuTu": 101
+    }
+  ]

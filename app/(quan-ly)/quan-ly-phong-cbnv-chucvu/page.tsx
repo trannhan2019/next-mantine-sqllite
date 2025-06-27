@@ -1,0 +1,58 @@
+import { Tabs, TabsList, TabsTab, TabsPanel } from "@mantine/core";
+import {
+  IconPhoto,
+  IconMessageCircle,
+  IconSettings,
+} from "@tabler/icons-react";
+import { PhongTable } from "@/components/phong/table";
+import { getManyPhong } from "@/actions/phong";
+import { ChucVuTable } from "@/components/chuc-vu/table";
+import { getManyChucVu } from "@/actions/chuc-vu";
+import { getManyNhanVien } from "@/actions/nhan-vien";
+import { NhanVienTable } from "@/components/nhan-vien/table";
+import { searchParams } from "@/types/common";
+
+export default async function QuanLyPhongCBNVChucVu({
+  searchParams,
+}: {
+  searchParams: searchParams;
+}) {
+  // Lấy các tham số phân trang từ searchParams
+  const { page, pageSize } = await searchParams;
+  const pageParam = parseInt(page || "1", 10);
+  const pageSizeParam = parseInt(pageSize || "10", 10);
+
+  const phong = await getManyPhong();
+  const chucvu = await getManyChucVu();
+  const {data, total} = await getManyNhanVien({ page: pageParam, pageSize: pageSizeParam });
+
+  return (
+    <div>
+      <Tabs defaultValue="phong">
+        <TabsList mb={"md"}>
+          <TabsTab value="phong" leftSection={<IconPhoto size={12} />}>
+            Phòng
+          </TabsTab>
+          <TabsTab value="chucvu" leftSection={<IconMessageCircle size={12} />}>
+            Chức vụ
+          </TabsTab>
+          <TabsTab value="nhanvien" leftSection={<IconSettings size={12} />}>
+            Nhân viên
+          </TabsTab>
+        </TabsList>
+
+        <TabsPanel value="phong">
+          <PhongTable data={phong} />
+        </TabsPanel>
+
+        <TabsPanel value="chucvu">
+          <ChucVuTable data={chucvu} />
+        </TabsPanel>
+
+        <TabsPanel value="nhanvien">
+          <NhanVienTable data={data} total={total} />
+        </TabsPanel>
+      </Tabs>
+    </div>
+  );
+}
