@@ -1,10 +1,15 @@
+import { prisma } from "@/lib/prisma";
 
-// import { PrismaClient } from '@prisma/client';
-import { prisma } from '@/lib/prisma';
-import phongData from './data/phong.json';
-import chucvuData from './data/chucvu.json';
-import nhanVienData from './data/nhanvien.json';
-
+import {
+  phongData,
+  chucvuData,
+  nhanVienData,
+  duLieuMucLuongToiThieu,
+  duLieuHeSoTrachNhiem,
+  duLieuHeSoPhuCap,
+  dulieuNgachLuong,
+  dulieuBacNgachLuong,
+} from "./data/data";
 
 async function main() {
   // const prisma = new PrismaClient();
@@ -13,12 +18,18 @@ async function main() {
   await prisma.phong.createMany({ data: phongData });
   await prisma.chucVu.createMany({ data: chucvuData });
   await prisma.nhanVien.createMany({ data: nhanVienData });
+  await prisma.mucLuongToiThieuVung.createMany({
+    data: duLieuMucLuongToiThieu,
+  });
+  await prisma.heSoTrachNhiem.createMany({ data: duLieuHeSoTrachNhiem });
+  await prisma.heSoPhuCap.createMany({ data: duLieuHeSoPhuCap });
+  await prisma.ngachLuong.createMany({ data: dulieuNgachLuong });
+  await prisma.bacNgachLuong.createMany({ data: dulieuBacNgachLuong });
 
-  console.log('Seed completed');
+  console.log("Seed completed");
 }
 
-main()
-.catch(e => {
+main().catch((e) => {
   console.error(e);
   process.exit(1);
-})
+});
