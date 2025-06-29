@@ -24,7 +24,10 @@ export default async function QuanLyPhongCBNVChucVu({
 
   const phong = await getManyPhong();
   const chucvu = await getManyChucVu();
-  const {data, total} = await getManyNhanVien({ page: pageParam, pageSize: pageSizeParam });
+  const { data, total } = await getManyNhanVien({
+    page: pageParam,
+    pageSize: pageSizeParam,
+  });
 
   return (
     <div>
@@ -33,11 +36,11 @@ export default async function QuanLyPhongCBNVChucVu({
           <TabsTab value="phong" leftSection={<IconPhoto size={12} />}>
             Phòng
           </TabsTab>
-          <TabsTab value="chucvu" leftSection={<IconMessageCircle size={12} />}>
-            Chức vụ
-          </TabsTab>
           <TabsTab value="nhanvien" leftSection={<IconSettings size={12} />}>
             Nhân viên
+          </TabsTab>
+          <TabsTab value="chucvu" leftSection={<IconMessageCircle size={12} />}>
+            Chức vụ
           </TabsTab>
         </TabsList>
 
@@ -45,12 +48,12 @@ export default async function QuanLyPhongCBNVChucVu({
           <PhongTable data={phong} />
         </TabsPanel>
 
-        <TabsPanel value="chucvu">
-          <ChucVuTable data={chucvu} />
-        </TabsPanel>
-
         <TabsPanel value="nhanvien">
           <NhanVienTable data={data} total={total} />
+        </TabsPanel>
+
+        <TabsPanel value="chucvu">
+          <ChucVuTable data={chucvu} />
         </TabsPanel>
       </Tabs>
     </div>

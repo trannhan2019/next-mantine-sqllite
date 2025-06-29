@@ -1,14 +1,11 @@
-'use client';
+"use client";
 
-import { SegmentedControl} from "@mantine/core";
+import { SegmentedControl } from "@mantine/core";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
-  Icon2fa,
   IconBellRinging,
-  IconDatabaseImport,
-  IconFileAnalytics,
   IconFingerprint,
   IconKey,
   IconLicense,
@@ -16,11 +13,8 @@ import {
   IconMessage2,
   IconMessages,
   IconReceipt2,
-  IconReceiptRefund,
-  IconSettings,
   IconShoppingCart,
   IconSwitchHorizontal,
-  IconUsers,
 } from "@tabler/icons-react";
 import classes from "./sidebar.module.css";
 
@@ -31,18 +25,20 @@ const tabs = {
     { link: "", label: "Billing", icon: IconReceipt2 },
     { link: "", label: "Security", icon: IconFingerprint },
     { link: "", label: "SSH Keys", icon: IconKey },
-    { link: "", label: "Databases", icon: IconDatabaseImport },
-    { link: "", label: "Authentication", icon: Icon2fa },
-    { link: "", label: "Other Settings", icon: IconSettings },
   ],
   quanly: [
-    { link: "/quan-ly-phong-cbnv-chucvu", label: "Phòng, Nhân viên, Chức vụ", icon: IconShoppingCart },
-    { link: "", label: "Receipts", icon: IconLicense },
+    {
+      link: "/quan-ly-phong-cbnv-chucvu",
+      label: "Phòng, Nhân viên, Chức vụ",
+      icon: IconShoppingCart,
+    },
+    {
+      link: "/quan-ly-ngach-bac-luong",
+      label: "Bậc, ngạch lương",
+      icon: IconLicense,
+    },
     { link: "", label: "Reviews", icon: IconMessage2 },
     { link: "", label: "Messages", icon: IconMessages },
-    { link: "", label: "Customers", icon: IconUsers },
-    { link: "", label: "Refunds", icon: IconReceiptRefund },
-    { link: "", label: "Files", icon: IconFileAnalytics },
   ],
 };
 
@@ -72,10 +68,9 @@ export function Sidebar() {
   return (
     <nav className={classes.navbar}>
       <div>
-
         <SegmentedControl
           value={section}
-          onChange={(value: any) => setSection(value)}
+          onChange={(value: string) => setSection(value as "main" | "quanly")}
           transitionTimingFunction="ease"
           fullWidth
           data={[

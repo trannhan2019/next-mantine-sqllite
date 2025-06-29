@@ -1,6 +1,6 @@
 "use client";
 
-import { Group, Pagination, Paper, Select, Table } from "@mantine/core";
+import { Group, Pagination, Select, Table } from "@mantine/core";
 import { NhanVienWithPhongChucVu } from "@/types/nhan-vien";
 import { usePhanTrang } from "@/hooks/phan-trang";
 
@@ -10,7 +10,13 @@ interface Props {
 }
 
 export function NhanVienTable({ data, total }: Props) {
-  const {currentPage, pageSize, totalPages, handlePageChange, handlePageSizeChange} = usePhanTrang(total);
+  const {
+    currentPage,
+    pageSize,
+    totalPages,
+    handlePageChange,
+    handlePageSizeChange,
+  } = usePhanTrang(total);
 
   const rows = data.map((element, idx) => (
     <Table.Tr key={element.id}>
@@ -22,8 +28,8 @@ export function NhanVienTable({ data, total }: Props) {
   ));
 
   return (
-    <Paper shadow="lg" p="xl" radius="md">
-      <Table>
+    <div>
+      <Table highlightOnHover withTableBorder>
         <Table.Thead>
           <Table.Tr>
             <Table.Th>STT</Table.Th>
@@ -35,7 +41,7 @@ export function NhanVienTable({ data, total }: Props) {
         <Table.Tbody>{rows}</Table.Tbody>
       </Table>
 
-      <Group mt="md" justify="flex-end">        
+      <Group mt="md" justify="flex-end">
         <Select
           data={["5", "10", "20", "50"]}
           value={String(pageSize)}
@@ -47,7 +53,7 @@ export function NhanVienTable({ data, total }: Props) {
           value={currentPage}
           onChange={handlePageChange}
         />
-        </Group>
-    </Paper>
+      </Group>
+    </div>
   );
 }
