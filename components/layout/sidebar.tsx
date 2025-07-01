@@ -21,10 +21,8 @@ import classes from "./sidebar.module.css";
 // Menu items.
 const tabs = {
   main: [
-    { link: "/", label: "Theo dõi BHXH", icon: IconBellRinging },
-    { link: "", label: "Billing", icon: IconReceipt2 },
-    { link: "", label: "Security", icon: IconFingerprint },
-    { link: "", label: "SSH Keys", icon: IconKey },
+    { link: "/theo-doi-bhxh", label: "Theo dõi BHXH", icon: IconBellRinging },
+    { link: "/", label: "Theo dõi .....", icon: IconMessages },
   ],
   quanly: [
     {
@@ -36,9 +34,7 @@ const tabs = {
       link: "/quan-ly-ngach-bac-luong",
       label: "Bậc, ngạch lương",
       icon: IconLicense,
-    },
-    { link: "", label: "Reviews", icon: IconMessage2 },
-    { link: "", label: "Messages", icon: IconMessages },
+    }
   ],
 };
 

@@ -8,7 +8,7 @@ import {
   duLieuHeSoTrachNhiem,
   duLieuHeSoPhuCap,
   dulieuNgachLuong,
-  dulieuBacNgachLuong,
+  dulieuBacNgachLuong,dulieuBHXH,duLieuHeSoLuongMax,
 } from "./data/data";
 
 async function main() {
@@ -25,6 +25,8 @@ async function main() {
   await prisma.heSoPhuCap.createMany({ data: duLieuHeSoPhuCap });
   await prisma.ngachLuong.createMany({ data: dulieuNgachLuong });
   await prisma.bacNgachLuong.createMany({ data: dulieuBacNgachLuong });
+  await prisma.thongTinBHXH.createMany({ data: dulieuBHXH });
+  await prisma.heSoLuongMax.createMany({ data: duLieuHeSoLuongMax });
 
   console.log("Seed completed");
 }

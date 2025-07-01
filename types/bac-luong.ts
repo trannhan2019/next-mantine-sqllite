@@ -1,6 +1,6 @@
 export type BacLuong = {
   id: number;
-  bac: string;
+  bac: number;
   heSo: number;
   thoiGianNangBac: number;
   ngachId: number;

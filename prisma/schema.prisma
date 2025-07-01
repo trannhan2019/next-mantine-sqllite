@@ -40,6 +40,9 @@ model NhanVien {
   chucVu   ChucVu @relation(fields: [chucVuId], references: [id])
 
   soThuTu Int @default(0)
+  isActive Boolean @default(true)
+
+  thongTinBHXH ThongTinBHXH?
 }
 
 model MucLuongToiThieuVung {
@@ -53,12 +56,14 @@ model HeSoPhuCap {
   id       Int    @id @default(autoincrement())
   chucDanh String
   heSo     Float
+  thongtinBHXHs ThongTinBHXH[]
 }
 
 model HeSoTrachNhiem {
   id       Int    @id @default(autoincrement())
   chucDanh String
   heSo     Float
+  thongtinBHXHs ThongTinBHXH[]
 }
 
 model NgachLuong {
@@ -70,11 +75,39 @@ model NgachLuong {
 
 model BacNgachLuong {
   id              Int        @id @default(autoincrement())
-  bac             String // I, II, III, IV
+  bac             Int // 1,2,3,4
   heSo            Float
   thoiGianNangBac Int // ngày
   ngachId         Int
   ngach           NgachLuong @relation(fields: [ngachId], references: [id])
+thongTinBHXHs ThongTinBHXH[]
 
   //@@unique([bac, ngachId]) // tránh trùng bậc trong 1 ngạch
+}
+
+model HeSoLuongMax {
+  id       Int    @id @default(autoincrement())
+  maNgach  String
+  bacMax      Int
+}
+
+model ThongTinBHXH {
+  id       Int    @id @default(autoincrement())
+
+  nhanVienId Int @unique
+  nhanVien NhanVien @relation(fields: [nhanVienId], references: [id])
+
+
+  bacNgachLuongId Int
+  bacNgachLuong BacNgachLuong @relation(fields: [bacNgachLuongId], references: [id])
+
+  phuCapId Int?
+  phuCap HeSoPhuCap? @relation(fields: [phuCapId], references: [id])
+
+  trachNhiemId Int?
+  trachNhiem HeSoTrachNhiem? @relation(fields: [trachNhiemId], references: [id])
+
+  ngayApDung DateTime
+  thongTin String?
+  isMaxBac Boolean @default(false)
 }

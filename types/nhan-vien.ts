@@ -5,6 +5,7 @@ export type NhanVien = {
   id: number;
   ten: string;
   soThuTu: number;
+  isActive: boolean;
 };
 
 export type NhanVienWithChucVu = NhanVien & {
