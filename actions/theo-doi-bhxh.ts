@@ -11,8 +11,11 @@ export const getTheoDoiBHXH = async (): Promise<ThongTinBHXHResponse[]> => {
                     phong: true
                 },
             },
-            ngachLuong: true,
-            bacNgachLuong: true,
+            bacNgachLuong: {
+                include: {
+                    ngach: true
+                }
+            },
             phuCap: true,
             trachNhiem: true,
         },

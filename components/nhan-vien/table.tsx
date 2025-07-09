@@ -1,9 +1,8 @@
 "use client";
 
-import { Chip, Group, Pagination, Select, Table } from "@mantine/core";
+import { Badge, Group, Pagination, Select, Table } from "@mantine/core";
 import { NhanVienWithPhongChucVu } from "@/types/nhan-vien";
 import { usePhanTrang } from "@/hooks/phan-trang";
-import { IconX } from '@tabler/icons-react';
 
 interface Props {
   data: NhanVienWithPhongChucVu[];
@@ -25,7 +24,7 @@ export function NhanVienTable({ data, total }: Props) {
       <Table.Td>{element.ten}</Table.Td>
       <Table.Td>{element.phong.ten}</Table.Td>
       <Table.Td>{element.chucVu.ten}</Table.Td>
-      <Table.Td>{element.isActive ? <Chip defaultChecked color="green">Hoạt động</Chip> : <Chip color="red" icon={<IconX size={16} />} defaultChecked>Ngừng hoạt động</Chip>}</Table.Td>
+      <Table.Td>{element.isActive ? <Badge color="green">Hoạt động</Badge> : <Badge color="red">Ngừng hoạt động</Badge>}</Table.Td>
     </Table.Tr>
   ));
 

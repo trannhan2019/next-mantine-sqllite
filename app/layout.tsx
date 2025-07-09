@@ -16,8 +16,8 @@ import { theme } from "@/theme";
 // });
 
 export const metadata: Metadata = {
-  title: 'My Mantine app',
-  description: 'I have followed setup instructions carefully',
+  title: 'Quản lý BHXH',
+  description: 'Quản lý BHXH',
 };
 
 export default function RootLayout({

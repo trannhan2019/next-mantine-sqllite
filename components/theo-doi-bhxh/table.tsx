@@ -1,4 +1,5 @@
 import {
+  Badge,
   List,
   ListItem,
   Table,
@@ -10,19 +11,17 @@ import {
 } from "@mantine/core";
 import { ThongTinBHXHResponse } from "@/types/thong-tin-bhxh";
 import { getManyMucLuongToiThieu } from "@/actions/muc-luong-toi-thieu";
-import dayjs from "dayjs";
+import {
+  calculateTotalSalary,
+  formatColorTheoNgayApDung,
+  formatNgayApDungTiepTheo,
+  isBacLuongMax,
+} from "@/lib/util";
+import { getManyBacLuongMax } from "@/actions/bac-luong-max";
 
 const mucLuongToiThieu = await getManyMucLuongToiThieu();
 const mucLuong = mucLuongToiThieu[0].mucLuong;
-
-const calculateTotalSalary = (item: ThongTinBHXHResponse, mucLuong: number) => {
-  const phuCapSalary = item.phuCap ? item.phuCap.heSo * mucLuong : 0;
-  const trachNhiemSalary = item.trachNhiem
-    ? item.trachNhiem.heSo * mucLuong
-    : 0;
-  const bacSalary = item.bacNgachLuong.heSo * mucLuong;
-  return phuCapSalary + trachNhiemSalary + bacSalary;
-};
+const bacLuongMax = await getManyBacLuongMax();
 
 export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
   return (
@@ -36,8 +35,6 @@ export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
           <TableTh>Mức lương (đồng)</TableTh>
           <TableTh>Thời gian áp dụng</TableTh>
           <TableTh>Thời gian nâng bậc tiếp theo</TableTh>
-          <TableTh>Trách nhiệm</TableTh>
-          <TableTh>Thành tiền</TableTh>
         </TableTr>
       </TableThead>
       <TableTbody>
@@ -61,8 +58,9 @@ export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
                   </ListItem>
                 )}
                 <ListItem>
-                  {item.ngachLuong.chucDanh}, bậc {item.bacNgachLuong.bac}, hệ
-                  số {item.bacNgachLuong.heSo.toLocaleString("vi-VN")}
+                  {item.bacNgachLuong.ngach.chucDanh}, bậc{" "}
+                  {item.bacNgachLuong.bac}, hệ số{" "}
+                  {item.bacNgachLuong.heSo.toLocaleString("vi-VN")}
                 </ListItem>
               </List>
             </TableTd>
@@ -71,7 +69,19 @@ export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
             </TableTd>
             <TableTd>{item.ngayApDung.toLocaleString("vi-VN")}</TableTd>
             <TableTd>
-             {dayjs(item.ngayApDung).add(item.bacNgachLuong.thoiGianNangBac, "day").format("DD/MM/YYYY")}
+              {isBacLuongMax(item.bacNgachLuong, bacLuongMax) ||
+              item.isMaxBac ? (
+                <Badge variant="outline" color="green">
+                  Đã max bậc
+                </Badge>
+              ) : (
+                <Badge color={formatColorTheoNgayApDung(item.ngayApDung, item.bacNgachLuong.thoiGianNangBac)}>
+                  {formatNgayApDungTiepTheo(
+                    item.ngayApDung,
+                    item.bacNgachLuong.thoiGianNangBac
+                  )}
+                </Badge>
+              )}
             </TableTd>
           </TableTr>
         ))}

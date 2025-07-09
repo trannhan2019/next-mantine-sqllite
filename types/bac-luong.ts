@@ -1,3 +1,5 @@
+import { NgachLuong } from "./ngach-luong";
+
 export type BacLuong = {
   id: number;
   bac: number;
@@ -5,3 +7,7 @@ export type BacLuong = {
   thoiGianNangBac: number;
   ngachId: number;
 };
+
+export type BacLuongWithNgach = BacLuong & {
+    ngach: NgachLuong;
+}

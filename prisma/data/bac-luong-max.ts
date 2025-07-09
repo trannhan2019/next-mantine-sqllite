@@ -1,0 +1,17 @@
+export const duLieuHeSoLuongMax = [
+    { maNgach: "QL.01", bacMax: 3, id: 1 },
+    { maNgach: "QL.02", bacMax: 3, id: 2 },
+    { maNgach: "QL.03", bacMax: 3, id: 3 },
+    { maNgach: "QL.05", bacMax: 3, id: 4 },
+    { maNgach: "A4", bacMax: 4, id: 5 },
+    { maNgach: "A3", bacMax: 8, id: 6 },
+    { maNgach: "A2", bacMax: 5, id: 7 },
+    { maNgach: "A1", bacMax: 5, id: 8 },
+    { maNgach: "B4", bacMax: 5, id: 9 },
+    { maNgach: "B3", bacMax: 4, id: 10 },
+    { maNgach: "B2", bacMax: 2, id: 11 },
+    { maNgach: "B1", bacMax: 7, id: 12 },
+    { maNgach: "VT", bacMax: 5, id: 13 },
+    { maNgach: "LX", bacMax: 5, id: 14 },
+    { maNgach: "BV", bacMax: 3, id: 15 },
+  ];

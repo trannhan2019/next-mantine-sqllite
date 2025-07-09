@@ -1,15 +1,15 @@
 import { prisma } from "@/lib/prisma";
+import { phongData } from "./data/phong";
+import { chucvuData } from "./data/chuc-vu";
+import { nhanVienData } from "./data/nhan-vien";
+import { duLieuMucLuongToiThieu } from "./data/muc-luong-toi-thieu";
+import { duLieuHeSoTrachNhiem } from "./data/he-so-trach-nhiem";
+import { duLieuHeSoPhuCap } from "./data/he-so-phu-cap";
+import { dulieuNgachLuong } from "./data/ngach-luong";
+import { dulieuBacNgachLuong } from "./data/bac-luong";
+import { dulieuBHXH } from "./data/theo-doi-bhxh";
+import { duLieuHeSoLuongMax } from "./data/bac-luong-max";
 
-import {
-  phongData,
-  chucvuData,
-  nhanVienData,
-  duLieuMucLuongToiThieu,
-  duLieuHeSoTrachNhiem,
-  duLieuHeSoPhuCap,
-  dulieuNgachLuong,
-  dulieuBacNgachLuong,dulieuBHXH,duLieuHeSoLuongMax,
-} from "./data/data";
 
 async function main() {
   // const prisma = new PrismaClient();
