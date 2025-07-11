@@ -6,13 +6,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   IconBellRinging,
-  IconFingerprint,
-  IconKey,
   IconLicense,
   IconLogout,
-  IconMessage2,
   IconMessages,
-  IconReceipt2,
   IconShoppingCart,
   IconSwitchHorizontal,
 } from "@tabler/icons-react";
@@ -49,10 +45,14 @@ export function Sidebar() {
     }
   }, [pathname]);
 
+  const isActive = (href: string) => {
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   const links = tabs[section].map((item) => (
     <Link
       className={classes.link}
-      data-active={item.link === pathname || undefined}
+      data-active={isActive(item.link) || undefined}
       href={item.link}
       key={item.label}
     >

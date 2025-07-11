@@ -4,7 +4,7 @@ import { prisma } from '@/lib/prisma';
 import { BacLuongMax } from '@/types/bac-luong-max';
 
 export const getManyBacLuongMax = async ():Promise<BacLuongMax[]> => {
-    const bacLuongMax = await prisma.heSoLuongMax.findMany({
+    const bacLuongMax = await prisma.bacLuongMax.findMany({
         orderBy: {
             id: 'asc'
         }

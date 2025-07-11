@@ -1,4 +1,4 @@
-export const duLieuHeSoLuongMax = [
+export const duLieuBacLuongMax = [
     { maNgach: "QL.01", bacMax: 3, id: 1 },
     { maNgach: "QL.02", bacMax: 3, id: 2 },
     { maNgach: "QL.03", bacMax: 3, id: 3 },

@@ -1,4 +1,5 @@
 import {
+  Anchor,
   Badge,
   List,
   ListItem,
@@ -18,6 +19,7 @@ import {
   isBacLuongMax,
 } from "@/lib/util";
 import { getManyBacLuongMax } from "@/actions/bac-luong-max";
+import Link from "next/link";
 
 const mucLuongToiThieu = await getManyMucLuongToiThieu();
 const mucLuong = mucLuongToiThieu[0].mucLuong;
@@ -41,7 +43,16 @@ export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
         {data.map((item, index) => (
           <TableTr key={item.id}>
             <TableTd>{index + 1}</TableTd>
-            <TableTd>{item.nhanVien.ten}</TableTd>
+            <TableTd>
+              <Anchor
+                component={Link}
+                href={`/theo-doi-bhxh/${item.nhanVien.id}`}
+                c="gray.9"
+                fz="sm"
+              >
+                {item.nhanVien.ten}
+              </Anchor>
+            </TableTd>
             <TableTd>{item.nhanVien.phong.ten}</TableTd>
             <TableTd>
               <List size="sm">
@@ -75,7 +86,12 @@ export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
                   Đã max bậc
                 </Badge>
               ) : (
-                <Badge color={formatColorTheoNgayApDung(item.ngayApDung, item.bacNgachLuong.thoiGianNangBac)}>
+                <Badge
+                  color={formatColorTheoNgayApDung(
+                    item.ngayApDung,
+                    item.bacNgachLuong.thoiGianNangBac
+                  )}
+                >
                   {formatNgayApDungTiepTheo(
                     item.ngayApDung,
                     item.bacNgachLuong.thoiGianNangBac

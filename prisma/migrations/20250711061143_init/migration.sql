@@ -65,7 +65,7 @@ CREATE TABLE "BacNgachLuong" (
 );
 
 -- CreateTable
-CREATE TABLE "HeSoLuongMax" (
+CREATE TABLE "BacLuongMax" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "maNgach" TEXT NOT NULL,
     "bacMax" INTEGER NOT NULL
@@ -85,6 +85,23 @@ CREATE TABLE "ThongTinBHXH" (
     CONSTRAINT "ThongTinBHXH_bacNgachLuongId_fkey" FOREIGN KEY ("bacNgachLuongId") REFERENCES "BacNgachLuong" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "ThongTinBHXH_phuCapId_fkey" FOREIGN KEY ("phuCapId") REFERENCES "HeSoPhuCap" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT "ThongTinBHXH_trachNhiemId_fkey" FOREIGN KEY ("trachNhiemId") REFERENCES "HeSoTrachNhiem" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "LichSuBHXH" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "nhanVienId" INTEGER NOT NULL,
+    "bacLuongId" INTEGER NOT NULL,
+    "phuCapId" INTEGER,
+    "trachNhiemId" INTEGER,
+    "mucLuongToiThieuVungId" INTEGER NOT NULL,
+    "ngayApDung" DATETIME,
+    "thongTinQD" TEXT,
+    CONSTRAINT "LichSuBHXH_nhanVienId_fkey" FOREIGN KEY ("nhanVienId") REFERENCES "NhanVien" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "LichSuBHXH_bacLuongId_fkey" FOREIGN KEY ("bacLuongId") REFERENCES "BacNgachLuong" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "LichSuBHXH_phuCapId_fkey" FOREIGN KEY ("phuCapId") REFERENCES "HeSoPhuCap" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT "LichSuBHXH_trachNhiemId_fkey" FOREIGN KEY ("trachNhiemId") REFERENCES "HeSoTrachNhiem" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT "LichSuBHXH_mucLuongToiThieuVungId_fkey" FOREIGN KEY ("mucLuongToiThieuVungId") REFERENCES "MucLuongToiThieuVung" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateIndex

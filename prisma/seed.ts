@@ -8,8 +8,8 @@ import { duLieuHeSoPhuCap } from "./data/he-so-phu-cap";
 import { dulieuNgachLuong } from "./data/ngach-luong";
 import { dulieuBacNgachLuong } from "./data/bac-luong";
 import { dulieuBHXH } from "./data/theo-doi-bhxh";
-import { duLieuHeSoLuongMax } from "./data/bac-luong-max";
-
+import { duLieuBacLuongMax } from "./data/bac-luong-max";
+import { dataLichSuBHXH } from "./data/lich-su-bhxh";
 
 async function main() {
   // const prisma = new PrismaClient();
@@ -26,7 +26,8 @@ async function main() {
   await prisma.ngachLuong.createMany({ data: dulieuNgachLuong });
   await prisma.bacNgachLuong.createMany({ data: dulieuBacNgachLuong });
   await prisma.thongTinBHXH.createMany({ data: dulieuBHXH });
-  await prisma.heSoLuongMax.createMany({ data: duLieuHeSoLuongMax });
+  await prisma.bacLuongMax.createMany({ data: duLieuBacLuongMax });
+  await prisma.lichSuBHXH.createMany({ data: dataLichSuBHXH });
 
   console.log("Seed completed");
 }
