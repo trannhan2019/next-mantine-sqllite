@@ -1,9 +1,5 @@
 import { Tabs, TabsList, TabsTab, TabsPanel } from "@mantine/core";
-import {
-  IconPhoto,
-  IconMessageCircle,
-  IconSettings,
-} from "@tabler/icons-react";
+
 import { PhongTable } from "@/components/phong/table";
 import { getManyPhong } from "@/actions/phong";
 import { ChucVuTable } from "@/components/chuc-vu/table";
@@ -33,15 +29,9 @@ export default async function QuanLyPhongCBNVChucVu({
     <div>
       <Tabs defaultValue="phong">
         <TabsList mb={"md"}>
-          <TabsTab value="phong" leftSection={<IconPhoto size={12} />}>
-            Phòng
-          </TabsTab>
-          <TabsTab value="nhanvien" leftSection={<IconSettings size={12} />}>
-            Nhân viên
-          </TabsTab>
-          <TabsTab value="chucvu" leftSection={<IconMessageCircle size={12} />}>
-            Chức vụ
-          </TabsTab>
+          <TabsTab value="phong">Phòng</TabsTab>
+          <TabsTab value="nhanvien">Nhân viên</TabsTab>
+          <TabsTab value="chucvu">Chức vụ</TabsTab>
         </TabsList>
 
         <TabsPanel value="phong">

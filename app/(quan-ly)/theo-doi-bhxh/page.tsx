@@ -6,7 +6,10 @@ export default async function TheoDoiBHXH() {
   const dataBHXH = await getTheoDoiBHXH();
   return (
     <div>
-      <Title order={2} mb="md"> Theo dõi BHXH </Title>
+      <Title order={3} mb="md" className="uppercase">
+        {" "}
+        Theo dõi BHXH{" "}
+      </Title>
       <TheoDoiBHXHTable data={dataBHXH} />
     </div>
   );

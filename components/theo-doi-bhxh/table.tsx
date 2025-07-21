@@ -18,12 +18,10 @@ import {
   formatNgayApDungTiepTheo,
   isBacLuongMax,
 } from "@/lib/util";
-import { getManyBacLuongMax } from "@/actions/bac-luong-max";
 import Link from "next/link";
 
 const mucLuongToiThieu = await getManyMucLuongToiThieu();
 const mucLuong = mucLuongToiThieu[0].mucLuong;
-const bacLuongMax = await getManyBacLuongMax();
 
 export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
   return (
@@ -46,7 +44,7 @@ export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
             <TableTd>
               <Anchor
                 component={Link}
-                href={`/theo-doi-bhxh/${item.nhanVien.id}`}
+                href={`/theo-doi-bhxh/${item.id}`}
                 c="gray.9"
                 fz="sm"
               >
@@ -69,18 +67,17 @@ export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
                   </ListItem>
                 )}
                 <ListItem>
-                  {item.bacNgachLuong.ngach.chucDanh}, bậc{" "}
-                  {item.bacNgachLuong.bac}, hệ số{" "}
-                  {item.bacNgachLuong.heSo.toLocaleString("vi-VN")}
+                  {item.ngachLuong.chucDanh}, bậc {item.bacLuong.bac}, hệ số{" "}
+                  {item.bacLuong.heSo.toLocaleString("vi-VN")}
                 </ListItem>
               </List>
             </TableTd>
             <TableTd>
               {calculateTotalSalary(item, mucLuong).toLocaleString("vi-VN")}
             </TableTd>
-            <TableTd>{item.ngayApDung.toLocaleString("vi-VN")}</TableTd>
+            <TableTd>{item.ngayApDung.toLocaleDateString("vi-VN")}</TableTd>
             <TableTd>
-              {isBacLuongMax(item.bacNgachLuong, bacLuongMax) ||
+              {isBacLuongMax(item.bacLuong, item.ngachLuong.bacNgach) ||
               item.isMaxBac ? (
                 <Badge variant="outline" color="green">
                   Đã max bậc
@@ -89,12 +86,12 @@ export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
                 <Badge
                   color={formatColorTheoNgayApDung(
                     item.ngayApDung,
-                    item.bacNgachLuong.thoiGianNangBac
+                    item.bacLuong.thoiGianNangBac
                   )}
                 >
                   {formatNgayApDungTiepTheo(
                     item.ngayApDung,
-                    item.bacNgachLuong.thoiGianNangBac
+                    item.bacLuong.thoiGianNangBac
                   )}
                 </Badge>
               )}

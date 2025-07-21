@@ -24,7 +24,7 @@ async function main() {
   await prisma.heSoTrachNhiem.createMany({ data: duLieuHeSoTrachNhiem });
   await prisma.heSoPhuCap.createMany({ data: duLieuHeSoPhuCap });
   await prisma.ngachLuong.createMany({ data: dulieuNgachLuong });
-  await prisma.bacNgachLuong.createMany({ data: dulieuBacNgachLuong });
+  await prisma.bacLuong.createMany({ data: dulieuBacNgachLuong });
   await prisma.thongTinBHXH.createMany({ data: dulieuBHXH });
   await prisma.bacLuongMax.createMany({ data: duLieuBacLuongMax });
   await prisma.lichSuBHXH.createMany({ data: dataLichSuBHXH });

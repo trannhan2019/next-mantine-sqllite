@@ -39,7 +39,7 @@ model NhanVien {
   chucVuId Int
   chucVu   ChucVu @relation(fields: [chucVuId], references: [id])
 
-  soThuTu Int @default(0)
+  soThuTu  Int     @default(0)
   isActive Boolean @default(true)
 
   thongTinBHXH ThongTinBHXH?
@@ -48,93 +48,96 @@ model NhanVien {
 }
 
 model MucLuongToiThieuVung {
-  id             Int      @id @default(autoincrement())
+  id             Int          @id @default(autoincrement())
   mucLuong       Int
   thoiGianApdung DateTime
   canCuPhapLy    String?
-  lichSuBHXHs LichSuBHXH[]
+  lichSuBHXHs    LichSuBHXH[]
 }
 
 model HeSoPhuCap {
-  id       Int    @id @default(autoincrement())
-  chucDanh String
-  heSo     Float
+  id            Int            @id @default(autoincrement())
+  chucDanh      String
+  heSo          Float
   thongtinBHXHs ThongTinBHXH[]
-  lichSuBHXHs LichSuBHXH[]
+  lichSuBHXHs   LichSuBHXH[]
 }
 
 model HeSoTrachNhiem {
-  id       Int    @id @default(autoincrement())
-  chucDanh String
-  heSo     Float
+  id            Int            @id @default(autoincrement())
+  chucDanh      String
+  heSo          Float
   thongtinBHXHs ThongTinBHXH[]
-  lichSuBHXHs LichSuBHXH[]
+  lichSuBHXHs   LichSuBHXH[]
 }
 
 model NgachLuong {
-  id       Int             @id @default(autoincrement())
-  maNgach  String          @unique // A1, A2, A3, A4
-  chucDanh String // Ví dụ: "Chuyên viên, Kinh tế viên, Kỹ sư"
-  bacNgach BacNgachLuong[]
+  id            Int            @id @default(autoincrement())
+  maNgach       String         @unique // A1, A2, A3, A4
+  chucDanh      String // Ví dụ: "Chuyên viên, Kinh tế viên, Kỹ sư"
+  bacNgach      BacLuong[]
+  thongTinBHXHs ThongTinBHXH[]
 }
 
-model BacNgachLuong {
-  id              Int        @id @default(autoincrement())
+model BacLuong {
+  id              Int            @id @default(autoincrement())
   bac             Int // 1,2,3,4
   heSo            Float
   thoiGianNangBac Int // ngày
   ngachId         Int
-  ngach           NgachLuong @relation(fields: [ngachId], references: [id])
-thongTinBHXHs ThongTinBHXH[]
-lichSuBHXHs LichSuBHXH[]
+  ngach           NgachLuong     @relation(fields: [ngachId], references: [id])
+  thongTinBHXHs   ThongTinBHXH[]
+  lichSuBHXHs     LichSuBHXH[]
 
   //@@unique([bac, ngachId]) // tránh trùng bậc trong 1 ngạch
 }
 
 model BacLuongMax {
-  id       Int    @id @default(autoincrement())
-  maNgach  String
-  bacMax      Int
+  id      Int    @id @default(autoincrement())
+  maNgach String
+  bacMax  Int
 }
 
 model ThongTinBHXH {
-  id       Int    @id @default(autoincrement())
+  id Int @id @default(autoincrement())
 
-  nhanVienId Int @unique
-  nhanVien NhanVien @relation(fields: [nhanVienId], references: [id])
+  nhanVienId Int      @unique
+  nhanVien   NhanVien @relation(fields: [nhanVienId], references: [id])
 
+  ngachLuongId Int
+  ngachLuong   NgachLuong @relation(fields: [ngachLuongId], references: [id])
 
-  bacNgachLuongId Int
-  bacNgachLuong BacNgachLuong @relation(fields: [bacNgachLuongId], references: [id])
+  bacLuongId Int
+  bacLuong   BacLuong @relation(fields: [bacLuongId], references: [id])
 
   phuCapId Int?
-  phuCap HeSoPhuCap? @relation(fields: [phuCapId], references: [id])
+  phuCap   HeSoPhuCap? @relation(fields: [phuCapId], references: [id])
 
   trachNhiemId Int?
-  trachNhiem HeSoTrachNhiem? @relation(fields: [trachNhiemId], references: [id])
+  trachNhiem   HeSoTrachNhiem? @relation(fields: [trachNhiemId], references: [id])
 
   ngayApDung DateTime
-  thongTin String?
-  isMaxBac Boolean @default(false)
+  thongTin   String?
+  isMaxBac   Boolean  @default(false)
 }
 
 model LichSuBHXH {
-  id       Int    @id @default(autoincrement())
+  id Int @id @default(autoincrement())
 
   nhanVienId Int
-  nhanVien NhanVien @relation(fields: [nhanVienId], references: [id])
+  nhanVien   NhanVien @relation(fields: [nhanVienId], references: [id])
 
   bacLuongId Int
-  bacLuong BacNgachLuong @relation(fields: [bacLuongId], references: [id])
+  bacLuong   BacLuong @relation(fields: [bacLuongId], references: [id])
 
   phuCapId Int?
-  phuCap HeSoPhuCap? @relation(fields: [phuCapId], references: [id])
+  phuCap   HeSoPhuCap? @relation(fields: [phuCapId], references: [id])
 
   trachNhiemId Int?
-  trachNhiem HeSoTrachNhiem? @relation(fields: [trachNhiemId], references: [id])
+  trachNhiem   HeSoTrachNhiem? @relation(fields: [trachNhiemId], references: [id])
 
   mucLuongToiThieuVungId Int
-  mucLuongToiThieuVung MucLuongToiThieuVung @relation(fields: [mucLuongToiThieuVungId], references: [id])
+  mucLuongToiThieuVung   MucLuongToiThieuVung @relation(fields: [mucLuongToiThieuVungId], references: [id])
 
   ngayApDung DateTime?
   thongTinQD String?
