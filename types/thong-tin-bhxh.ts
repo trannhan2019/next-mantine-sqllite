@@ -1,7 +1,7 @@
 import { BacLuong } from "./bac-luong";
 import { HeSoPhuCap } from "./hs-phu-cap";
 import { NgachLuongWithBac } from "./ngach-luong";
-import { NhanVienWithPhong } from "./nhan-vien";
+import { NhanVien, NhanVienWithPhong } from "./nhan-vien";
 
 export type ThongTinBHXH = {
   id: number;
@@ -12,6 +12,12 @@ export type ThongTinBHXH = {
   ngayApDung: Date;
   thongTin: string | null;
   isMaxBac: boolean;
+};
+
+export type ThongTinBHXHWithNhanVienNgachLuongBacLuong = ThongTinBHXH & {
+  nhanVien: NhanVien;
+  ngachLuong: NgachLuongWithBac;
+  bacLuong: BacLuong;
 };
 
 export type ThongTinBHXHResponse = ThongTinBHXH & {

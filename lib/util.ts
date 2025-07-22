@@ -1,6 +1,4 @@
-import { BacLuong, BacLuongWithNgach } from "@/types/bac-luong";
-import { BacLuongMax } from "@/types/bac-luong-max";
-import { ThongTinBHXHResponse } from "@/types/thong-tin-bhxh";
+import { BacLuong } from "@/types/bac-luong";
 import dayjs from "dayjs";
 import { DAY_15, DAY_30, DAY_7 } from "./constants";
 
@@ -12,6 +10,20 @@ export const timBacLuongTiepTheo = (
     (item) => item.bac === bacLuong.bac + 1
   );
   return bacLuongTiepTheo;
+};
+
+export const tinhSoNgayNangBacConLai = (
+  ngayApDung: Date | undefined,
+  thoiGianNangBac: number
+) => {
+  return dayjs(ngayApDung).add(thoiGianNangBac, "day").diff(dayjs(), "day");
+};
+
+export const isGanDenHanNangBac = (
+  ngayApDung: Date | undefined,
+  thoiGianNangBac: number
+) => {
+  return tinhSoNgayNangBacConLai(ngayApDung, thoiGianNangBac) < DAY_15;
 };
 
 export const formatNgayApDungTiepTheo = (

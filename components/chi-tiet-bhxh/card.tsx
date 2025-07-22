@@ -4,10 +4,12 @@ import {
   calculateTotalSalary,
   formatNgayApDungTiepTheo,
   isBacLuongMax,
+  isGanDenHanNangBac,
   timBacLuongTiepTheo,
+  tinhSoNgayNangBacConLai,
 } from "@/lib/util";
 import { ThongTinBHXHResponse } from "@/types/thong-tin-bhxh";
-import { Badge, Card, Divider, List, Text, Title } from "@mantine/core";
+import { Badge, Button, Card, Divider, List, Text, Title } from "@mantine/core";
 
 interface Props {
   data: ThongTinBHXHResponse | null;
@@ -66,6 +68,7 @@ export function ChiTietBHXHCard({ data, mucLuong }: Props) {
         </span>
       </Text>
       <Divider my="md" />
+
       <Title order={4} c="blue.6" mb={"md"}>
         Thông tin nâng bậc tiếp theo
       </Title>
@@ -114,6 +117,19 @@ export function ChiTietBHXHCard({ data, mucLuong }: Props) {
               đồng
             </span>
           </Text>
+          {isGanDenHanNangBac(
+            data?.ngayApDung,
+            data?.bacLuong?.thoiGianNangBac || 0
+          ) && (
+            <Button mt={"md"} variant="outline" color="red">
+              Xác nhận nâng bậc tiếp theo: Thời gian còn{" "}
+              {tinhSoNgayNangBacConLai(
+                data?.ngayApDung,
+                data?.bacLuong?.thoiGianNangBac || 0
+              )}{" "}
+              ngày
+            </Button>
+          )}
         </div>
       )}
     </Card>

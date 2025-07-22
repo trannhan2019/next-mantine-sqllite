@@ -73,7 +73,12 @@ export function TheoDoiBHXHTable({ data }: { data: ThongTinBHXHResponse[] }) {
               </List>
             </TableTd>
             <TableTd>
-              {calculateTotalSalary(item, mucLuong).toLocaleString("vi-VN")}
+              {calculateTotalSalary(
+                item.phuCap?.heSo,
+                item.trachNhiem?.heSo,
+                item.bacLuong,
+                mucLuong
+              ).toLocaleString("vi-VN")}
             </TableTd>
             <TableTd>{item.ngayApDung.toLocaleDateString("vi-VN")}</TableTd>
             <TableTd>
