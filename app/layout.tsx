@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
-import '@mantine/core/styles.css';
+import "@mantine/core/styles.css";
 import "./globals.css";
-import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
+import {
+  ColorSchemeScript,
+  MantineProvider,
+  mantineHtmlProps,
+} from "@mantine/core";
 import { theme } from "@/theme";
 
 // const geistSans = Geist({
@@ -16,8 +20,8 @@ import { theme } from "@/theme";
 // });
 
 export const metadata: Metadata = {
-  title: 'Quản lý BHXH',
-  description: 'Quản lý BHXH',
+  title: "Quản lý BHXH",
+  description: "Quản lý BHXH",
 };
 
 export default function RootLayout({
@@ -30,7 +34,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
+      <body className="relative">
         <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>

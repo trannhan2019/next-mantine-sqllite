@@ -1,6 +1,5 @@
 "use client";
 
-import { getBHXHGanDenHan } from "@/actions/theo-doi-bhxh";
 import { NotificationHeader } from "./notifacation";
 import { UserHeader } from "./user";
 import { useEffect, useState } from "react";
@@ -15,16 +14,12 @@ export function Header() {
   const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
-    getBHXHGanDenHan().then((result) => {
+    sendNotificationEmail().then((result) => {
       if (result) {
         setBhxhDenHans(result);
         setShowAlert(true);
       }
     });
-  }, []);
-
-  useEffect(() => {
-    sendNotificationEmail();
   }, []);
 
   return (

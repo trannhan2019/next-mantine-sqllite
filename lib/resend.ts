@@ -13,13 +13,15 @@ export const resendEmail = async ({
   try {
     const result = await resend.emails.send({
       from: "onboarding@resend.dev", // hoặc domain đã xác minh
-      to: DIA_CHI_EMAIL_NHAN,
+      to: [DIA_CHI_EMAIL_NHAN],
       subject,
       html,
     });
+    // console.log("đã gửi email");
 
     return { success: true, data: result };
   } catch (error: any) {
+    // console.log("k gửi email");
     return { success: false, error: error.message };
   }
 };

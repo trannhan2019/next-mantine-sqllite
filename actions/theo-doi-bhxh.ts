@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { ThongTinBHXHResponse } from "@/types/thong-tin-bhxh";
 import dayjs from "dayjs";
-import { DAY_15 } from "@/lib/constants";
+import { DAYS_SEND_NOTIFICATION } from "@/lib/constants";
 import { xuatThongTinBHXH, xuatThongTinBHXHWithTemplate } from "@/lib/excel";
 
 export const getTheoDoiBHXH = async (): Promise<ThongTinBHXHResponse[]> => {
@@ -108,7 +108,7 @@ export const getBHXHGanDenHan = async () => {
     // Hoặc bạn có thể dùng các toán tử so sánh thông thường vì Day.js objects có thể so sánh được
     return (
       record.ngachLuong.bacNgach.length !== record.bacLuong.bac &&
-      calculatedDate.diff(now, "day") < DAY_15
+      calculatedDate.diff(now, "day") < DAYS_SEND_NOTIFICATION
     );
     // Hoặc cách này cũng đúng:
     // return calculatedDate >= fifteenDaysAgo && calculatedDate <= now;
