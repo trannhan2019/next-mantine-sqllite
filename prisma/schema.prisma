@@ -119,6 +119,8 @@ model ThongTinBHXH {
   ngayApDung DateTime
   thongTin   String?
   isMaxBac   Boolean  @default(false)
+
+  lastEmailSentAt DateTime? // Có thể null nếu chưa gửi email lần nào
 }
 
 model LichSuBHXH {

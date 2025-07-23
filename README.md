@@ -39,6 +39,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 show chi tiet + lich su nâng lương BHXH
 notifacation + alert
-send email
+send email -> su dung resend voi email phongtochuchanhchinh.sba@gmail.com
 Xac nhan nang luong -> lay lương mới và add vô lịch sử
 authentication
+
+# hien tai chua dung den BANG LUONG MAX ; THONGTINBHXH/ISMAX

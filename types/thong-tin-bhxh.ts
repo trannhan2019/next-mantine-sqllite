@@ -12,6 +12,7 @@ export type ThongTinBHXH = {
   ngayApDung: Date;
   thongTin: string | null;
   isMaxBac: boolean;
+  lastEmailSentAt: Date | null;
 };
 
 export type ThongTinBHXHWithNhanVienNgachLuongBacLuong = ThongTinBHXH & {

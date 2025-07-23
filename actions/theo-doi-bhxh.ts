@@ -2,11 +2,9 @@
 
 import { prisma } from "@/lib/prisma";
 import { ThongTinBHXHResponse } from "@/types/thong-tin-bhxh";
-import ExcelJS from "exceljs";
-import path from "path";
-import fs from "fs";
 import dayjs from "dayjs";
 import { DAY_15 } from "@/lib/constants";
+import { xuatThongTinBHXH, xuatThongTinBHXHWithTemplate } from "@/lib/excel";
 
 export const getTheoDoiBHXH = async (): Promise<ThongTinBHXHResponse[]> => {
   const thongTinBHXHs = await prisma.thongTinBHXH.findMany({
@@ -56,64 +54,30 @@ export const getTheoDoiBHXHById = async (
 export const xuatThongTinBHXHById = async (id: number) => {
   // 1. Lấy thong tin BHXH theo id
   const thongTinBHXH = await getTheoDoiBHXHById(id);
-  console.log(thongTinBHXH);
+  // console.log(thongTinBHXH);
+  if (!thongTinBHXH) return null;
   const dataExcel = {
     id: thongTinBHXH?.id,
     ten: thongTinBHXH?.nhanVien.ten,
     phong: thongTinBHXH?.nhanVien.phong.ten,
   };
-
   // 2. Tạo workbook và worksheet
-  const workbook = new ExcelJS.Workbook();
-  const worksheet = workbook.addWorksheet("Báo cáo lương BHXH");
-  worksheet.columns = [
-    { header: "ID", key: "id", width: 10 },
-    { header: "Họ và Tên", key: "ten", width: 30 },
-    { header: "Phòng", key: "phong", width: 30 },
-  ];
-  worksheet.addRow(dataExcel);
-  // Xuất workbook ra buffer
-  const buffer = await workbook.xlsx.writeBuffer();
-  // Chuyển buffer sang base64 để gửi về client
-  const base64 = Buffer.from(buffer).toString("base64");
-  return `data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,${base64}`;
+  return await xuatThongTinBHXH(dataExcel);
 };
 
 export const xuatThongTinBHXHByIdWithTemplate = async (id: number) => {
   // 1. Lấy thong tin BHXH theo id
   const thongTinBHXH = await getTheoDoiBHXHById(id);
+  if (!thongTinBHXH) return null;
   const dataExcel = {
     "Họ và tên": thongTinBHXH?.nhanVien.ten,
     "Phòng/Đơn vị": thongTinBHXH?.nhanVien.phong.ten,
   };
-
-  const workbook = new ExcelJS.Workbook();
-  // Đọc template từ thư mục public hoặc thư mục server
-  const filePath = path.join(process.cwd(), "public/report_bhxh.xlsx");
-  const buffer = fs.readFileSync(filePath);
-
-  await workbook.xlsx.load(buffer.buffer); // Nạp nội dung template
-
-  const worksheet = workbook.getWorksheet("Sheet1"); // hoặc tên khác phù hợp
-  const startRow = 3;
-  const entries = Object.entries(dataExcel);
-
-  if (!worksheet) throw new Error("Không tìm thấy worksheet 'Sheet1'");
-
-  entries.forEach(([key, value], index) => {
-    const row = worksheet.getRow(startRow + index);
-    row.getCell(1).value = key; // Cột A: tên thuộc tính
-    row.getCell(2).value = value; // Cột B: giá trị
-    row.commit();
-  });
-  // Xuất workbook ra buffer
-  const bufferExcel = await workbook.xlsx.writeBuffer();
-  // Chuyển buffer sang base64 để gửi về client
-  const base64 = Buffer.from(bufferExcel).toString("base64");
-  return `data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,${base64}`;
+  // 2. Tạo workbook và worksheet
+  return await xuatThongTinBHXHWithTemplate(dataExcel);
 };
 
-export const getRecentBhxhRecords = async () => {
+export const getBHXHGanDenHan = async () => {
   const allBhxhRecords = await prisma.thongTinBHXH.findMany({
     include: {
       nhanVien: true,
